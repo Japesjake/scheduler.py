@@ -7,6 +7,7 @@ def update_name(excel, entry):
     if entry.get():
         excel.loc[len(excel)] = entry.get()
     print(excel)
+    pd.DataFrame.to_excel('employees.xlsx', excel)
 
 excel = pd.read_excel('employees.xlsx')
 window = tk.Tk()
